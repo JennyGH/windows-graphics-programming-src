@@ -1,0 +1,2 @@
+ADD_SUBDIRECTORY(CoordinateSpace)
+ADD_SUBDIRECTORY(WeiQi)

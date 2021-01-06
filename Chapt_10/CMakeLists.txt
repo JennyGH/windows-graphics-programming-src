@@ -1,0 +1,2 @@
+ADD_SUBDIRECTORY(Bitmaps)
+ADD_SUBDIRECTORY(Scrambler)

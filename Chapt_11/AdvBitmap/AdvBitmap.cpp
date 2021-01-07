@@ -630,9 +630,9 @@ void TestLoadImage(HDC hDC, HINSTANCE hInstance)
 {
 	HBITMAP hBitmap[3];
 	
-	const nID [] = { IDB_MOSQUIT1, IDB_MOSQUIT2, IDB_MOSQUIT3 };
-
-	for (int i=0; i<3; i++)
+	const int nID [] = { IDB_MOSQUIT1, IDB_MOSQUIT2, IDB_MOSQUIT3 };
+    int i = 0;
+	for (i=0; i<3; i++)
 		hBitmap[i] = (HBITMAP) LoadImage(hInstance, MAKEINTRESOURCE(nID[i]), IMAGE_BITMAP, 0, 0,
 							LR_LOADTRANSPARENT | LR_CREATEDIBSECTION );
 

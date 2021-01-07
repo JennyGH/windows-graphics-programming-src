@@ -413,8 +413,8 @@ int KCharSetView::OnDraw(HDC hdc, const RECT * rcPaint)
 			  LineTo(hdc, x0 + i*m_width, y0 + m_row*m_height);
 		}
 	}
-
-	for (int y=0; y<16; y++)
+    int y = 0;
+	for (y=0; y<16; y++)
 		DispRow(hdc, x0, y0, y, y * 16, 1);
 	
 //	const int MapBIG5[] = { 4, 5, 6, 7, 0xA, 0xB, 0xC, 0xD, 0xE, 0xF };

@@ -44,10 +44,10 @@ public:
     const IMAGEHLP_SYMBOL * ImageGetSymbol(const char * name);
 	bool  LoadSystemModule(char * module, char * extension);
 	
-	BOOL  EnumSymbolsCallback(LPSTR SymbolName, ULONG SymbolAddress, ULONG SymbolSize) ;
+	BOOL  EnumSymbolsCallback(PCSTR SymbolName, ULONG SymbolAddress, ULONG SymbolSize) ;
 
 	void  ShowFPO(ULONG SymbolAddress);
-	void  TranslateName(LPSTR SymbolName);
+	void  TranslateName(PCSTR SymbolName);
 
 	const unsigned char * GetImagePointer(unsigned symbva);
 	const unsigned char * Address2ImagePointer(unsigned addr);

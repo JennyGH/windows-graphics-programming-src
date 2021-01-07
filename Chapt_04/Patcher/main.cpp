@@ -19,7 +19,7 @@
 
 #include "Patcher.h"
 
-CPatcher patcher;
+KPatcher patcher;
 
 const char * FuncNames[] =
 {

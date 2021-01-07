@@ -69,8 +69,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	
 	QueryPerformanceFrequency((LARGE_INTEGER *) & freq3); freq3 /= 1000;
 	freq4 = MyQueryFrequency();							  freq4 /= 1000;
-
-	for (int i=0; i<SAMPLES; i++)
+    int i = 0;
+	for (i=0; i<SAMPLES; i++)
 	{
 		for (int j=0; j<200; j++)	// roughly 0.2 ms to 0.5ms delay
 			DeleteObject(CreateSolidBrush(0));

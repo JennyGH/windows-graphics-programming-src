@@ -535,8 +535,8 @@ TCHAR szSmooth[]        = _T("Smooth");
 TCHAR szGuasianSmooth[] = _T("Guasian Smooth");
 TCHAR szSharpening[]    = _T("Sharpening");
 TCHAR szLaplasian[]     = _T("Laplasian");
-TCHAR szEmboss135[]     = _T("Emboss 135°");
-TCHAR szEmboss90[]      = _T("Emboss 90° 50%");
+TCHAR szEmboss135[]     = _T("Emboss 135");
+TCHAR szEmboss90[]      = _T("Emboss 90");
 
 K33Filter< 1,  1,  1,  1,  1,  1,  1,  1,  1, 9,   0, false, szSmooth        > filter33_smooth;
 K33Filter< 0,  1,  0,  1,  4,  1,  0,  1,  0, 8,   0, false, szGuasianSmooth > filter33_guasiansmooth;

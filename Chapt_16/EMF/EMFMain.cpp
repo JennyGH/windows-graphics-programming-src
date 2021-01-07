@@ -120,8 +120,8 @@ void Demo_Scale(HDC hDC)
 		FillRect(hDC, & rect, yellow);
 		SampleDraw(hDC, 10, 10); // original
 	}
-
-	for (int test=0, x=120; test<3; test++)
+    int test = 0, x = 120;
+	for (test=0, x=120; test<3; test++)
 	{
 		RECT rect = { x, 10, x+(test/2+1)*100, 10+((test+1)/2+1)*100 };
 	

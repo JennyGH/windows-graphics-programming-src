@@ -571,7 +571,7 @@ public:
 			}
 		}
 
-		i = 0;
+		int i = 0;
 		int x0, y0;
 
 		// curve
@@ -703,7 +703,7 @@ int KTrueType::DecodeGlyph(int index, KCurve & curve, XFORM * xm) const
 	int x = 0;
 	int y = 0;
 
-	i = 0;
+	int i = 0;
 	BYTE flag = 0;
 	int  rep  = 0;
 

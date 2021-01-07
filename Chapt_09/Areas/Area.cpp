@@ -560,8 +560,8 @@ void KMyCanvas::TestRectangle(HDC hDC)
 	HBRUSH hBlue = CreateSolidBrush(RGB(0, 0, 0xFF));
 
 	SelectObject(hDC, hBlue);
-	
-	for (int i=0; i<6; i++)
+    int i = 0;
+	for (i=0; i<6; i++)
 	{
 		SetViewportOrgEx(hDC, (i%3)*180, (i/3)*180, NULL);
 
@@ -788,8 +788,8 @@ void KMyCanvas::TestEllipse(HDC hDC)
 	SelectObject(hDC, hBrush);
 
 	// Zoomed in display shows the dimension of ellipse
-	
-	for (int i=0; i<=6; i+=3)
+    int i = 0;
+	for (i=0; i<=6; i+=3)
 	{
 		SetViewportOrgEx(hDC, i*200/3, 0, NULL);
 
@@ -952,8 +952,8 @@ void DrawPieChart(HDC hDC, int x0, int y0, int x1, int y1,
 				  double data[], COLORREF color[], int count)
 {
 	double sum = 0;
-	
-	for (int i=0; i<count; i++)
+    int i = 0;
+	for (i=0; i<count; i++)
 		sum += data[i];
 
 	double angle = 0;
@@ -1068,8 +1068,8 @@ void KMyCanvas::TestPolyFillMode(HDC hDC)
 	KGDIObject brush(hDC, CreateSolidBrush(RGB(0xFF, 0xFF, 0)));
 	
 	const POINT P2[] = { { 0, 0 }, { 0, 15 }, { 20, 15 } };
-
-	for (int i=0; i<2; i++)
+    int i = 0;
+	for (i=0; i<2; i++)
 	{
 		SetViewportOrgEx(hDC, 50+350*i, 50, NULL);
 		
@@ -1723,8 +1723,8 @@ void KMyCanvas::TestGradientFill(HDC hDC)
 {
 	const COLORREF c0 = RGB(0x20, 0x20, 0x20);
 	const COLORREF c1 = RGB(0xF0, 0xF0, 0x20);
-
-	for (int i=0; i<4; i++)
+    int i = 0;
+	for (i=0; i<4; i++)
 		GradientRectangle(hDC, 100+110*i, 50, 200+110*i, 150, c0, c1, i*45);
 
 	for (i=0; i<4; i++)

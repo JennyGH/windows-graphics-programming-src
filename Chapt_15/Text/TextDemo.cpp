@@ -231,7 +231,7 @@ void Demo_Term(HDC hDC, const RECT * rcPaint)
 
 		SIZE size;
 
-		GetTextExtentPoint(hDC, "@" /*"Ç"*/, 1, & size);
+		GetTextExtentPoint(hDC, "@" /*"?*/, 1, & size);
 
 		// vertical metrics lines
 		HPEN hPen = CreatePen(PS_DOT, 0, RGB(0, 0, 0));
@@ -831,8 +831,8 @@ void Demo_CharacterPlacement(HDC hDC, const RECT * rcPaint)
 
 	SIZE size;
 	GetTextExtentPoint32(hDC, mess, _tcslen(mess), & size);
-
-	for (int test=0; test<3; test++)
+    int test = 0;
+	for (test=0; test<3; test++)
 	{
 		y += linespace;
 	
@@ -993,8 +993,8 @@ void Demo_GlyphIndex(HDC hDC, const RECT *)
 		WORD  glyphindex[8];
 
 		int cGlyph = min(pGlyphSet->ranges[i].cGlyphs, 8);
-		
-		for (int j=0; j<cGlyph; j++)
+        int j = 0;
+		for (j=0; j<cGlyph; j++)
 			sample[j] = pGlyphSet->ranges[i].wcLow + j;
 
 		TextOutW(hDC, x+150, y, sample, cGlyph);
@@ -1126,8 +1126,8 @@ void Demo_TabbedTextOut(HDC hDC)
 	};
 
 	int x=50, y=50;
-	
-	for (int i=0; i<3; i++)
+    int i = 0;
+	for (i=0; i<3; i++)
 		y += HIWORD(TabbedTextOut(hDC, x, y, lines[i], _tcslen(lines[i]), 
 				sizeof(tabstop)/sizeof(tabstop[0]), tabstop, x));
 
@@ -1356,8 +1356,8 @@ bool Disp(const TCHAR * pFileName, HDC hDC)
 	bmi.bmiHeader.biHeight   = height; // top-down DIB
 	bmi.bmiHeader.biPlanes   = 1;
 	bmi.bmiHeader.biBitCount = 4;
-
-	for (int i=0; i<16; i++)
+    int i = 0;
+	for (i=0; i<16; i++)
 	{
 		bmi.bmiColors[i].rgbRed   = i * 255 / 15;
 		bmi.bmiColors[i].rgbGreen = i * 255 / 15;
@@ -1372,8 +1372,8 @@ bool Disp(const TCHAR * pFileName, HDC hDC)
 	for (i=0; i<height; i++)
 	{
 		BYTE temp[512];
-
-		for (int j=0; j<bps/2; j++)
+        int j = 0;
+		for (j=0; j<bps/2; j++)
 			temp[j] = p[j*2];
 
 		for (j=bps/2; j<bps; j++)
@@ -1511,7 +1511,7 @@ void Demo_TextGeometry(HDC hDC)
 		KGDIObject font(hDC, lf.CreateFont());
 
 		TCHAR mess[32];
-		wsprintf(mess, "%02d° deg", degree);
+		wsprintf(mess, "%02d?deg", degree);
 
 		int x =  x0 + (int)( r * cos(degree*pi/180) );
 		int y =  y0 - (int)( r * sin(degree*pi/180) );
@@ -1926,7 +1926,7 @@ public:
 		m_dy = dy;
 	}
 
-	virtual Map(float x, float y, float & rx, float & ry)
+	virtual void Map(float x, float y, float & rx, float & ry)
 	{
 		rx = x + m_dx;
 		ry = y + m_dy;
@@ -1945,7 +1945,7 @@ public:
 		m_dy = dy;
 	}
 
-	virtual Map(float x, float y, float & rx, float & ry)
+	virtual void Map(float x, float y, float & rx, float & ry)
 	{
 		rx = x + m_dx;
 		ry = y + m_dy + (int) (sin(x/50.0) * 20); // 100 pixel cycle +-20
@@ -1964,7 +1964,7 @@ public:
 		m_dy = dy;
 	}
 
-	virtual Map(float x, float y, float & rx, float & ry)
+	virtual void Map(float x, float y, float & rx, float & ry)
 	{
 		rx = x + m_dx + (rand() % 7-3);
 		ry = y + m_dy + (rand() % 7-3);
@@ -1995,7 +1995,7 @@ public:
 		m_eye_z = ez;
 	}
 
-	virtual Map(float x, float y, float & rx, float & ry)
+	virtual void Map(float x, float y, float & rx, float & ry)
 	{
 		rx = x + m_dx;
 		ry = y + m_dy;

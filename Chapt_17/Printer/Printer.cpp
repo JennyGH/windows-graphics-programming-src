@@ -207,8 +207,8 @@ void Demo_AreaFill(HDC hDC, const RECT * rcPaint, int width, int height)
 {
 	const COLORREF c0 = RGB(0x20, 0x20, 0x20);
 	const COLORREF c1 = RGB(0xF0, 0xF0, 0x20);
-
-	for (int i=0; i<4; i++)
+    int i = 0;
+	for (i=0; i<4; i++)
 		GradientRectangle(hDC, 1000+1100*i, 500, 2000+1100*i, 1500, c0, c1, i*450);
 
 	for (i=0; i<4; i++)

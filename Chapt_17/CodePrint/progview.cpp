@@ -372,8 +372,8 @@ void KProgramPageCanvas::UponDrawPage(HDC hDC, const RECT * rcPaint, int width, 
 	KGetline parser(m_pBuffer, m_nSize);
 
 	int skip = pageno * m_nLinePerPage;
-
-	for (int i=0; i<skip; i++)
+    int i = 0;
+	for (i=0; i<skip; i++)
 		parser.Nextline();
 
 	for (i=0; i<m_nLinePerPage; i++)

@@ -98,7 +98,8 @@ void KMyCanvas::ClearBuffer(int width, int height, int x0, int y0)
 {
 	if ( (width!=m_lastwidth) || (height!=m_lastheight) )	
 	{
-		for (int i=0; i<sizeof(Buffer)/sizeof(Buffer[0]); i++)
+        int i = 0;
+		for (i=0; i<sizeof(Buffer)/sizeof(Buffer[0]); i++)
 			if ( Buffer[i] )
 			{
 				delete [] Buffer[i];
@@ -122,8 +123,8 @@ void KMyCanvas::ClearBuffer(int width, int height, int x0, int y0)
 	if ( y0 > m_lasty0 )	// move up
 	{
 		int n = y0 - m_lasty0;
-
-		for (int y=0; y<height - n; y++)
+        int y = 0;
+		for (y=0; y<height - n; y++)
 			memcpy(Buffer[y], Buffer[y+n], width * sizeof(short));
 
 		for (; y<height; y++)
@@ -132,8 +133,8 @@ void KMyCanvas::ClearBuffer(int width, int height, int x0, int y0)
 	else if ( y0 < m_lasty0 )
 	{
 		int n = m_lasty0 - y0;
-
-		for (int y=height-1; y>n; y--)
+        int y = 0;
+		for (y=height-1; y>n; y--)
 			memcpy(Buffer[y], Buffer[y-n], width * sizeof(short));
 
 		for (; y>=0; y--)
@@ -144,8 +145,8 @@ void KMyCanvas::ClearBuffer(int width, int height, int x0, int y0)
 		if ( x0 > m_lastx0 )	// left
 		{
 			int n = x0 - m_lastx0;
-
-			for (int x=0; x<width - n; x++)
+            int x = 0;
+			for (x=0; x<width - n; x++)
 				Buffer[y][x] = Buffer[y][x+n];
 
 			for (; x<width; x++)
@@ -154,8 +155,8 @@ void KMyCanvas::ClearBuffer(int width, int height, int x0, int y0)
 		else if ( x0 < m_lastx0 )
 		{
 			int n = m_lastx0 - x0;
-
-			for (int x=width-1; x>n; x--)
+            int x = 0;
+			for (x=width-1; x>n; x--)
 				Buffer[y][x] = Buffer[y][x-n];
 
 			for (; x>=0; x--)

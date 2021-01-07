@@ -19,11 +19,11 @@ class KMemDump
 {
     TCHAR    m_filename[MAX_PATH];
 
-    ofstream * m_stream;
+    std::ofstream * m_stream;
 
 public:
-	TCHAR    m_line[128];
-    
+    TCHAR    m_line[128];
+
     void OpenDump(void);
     void CloseDump(void);
 
@@ -31,11 +31,11 @@ public:
     void Dump(unsigned char * start, unsigned offset, int size, int unitsize);
     void Newline(void);
     void Writeln(const TCHAR * text);
-    
-	KMemDump()
-	{
+
+    KMemDump()
+    {
         m_stream = NULL;
-	}
+    }
 };
 
 

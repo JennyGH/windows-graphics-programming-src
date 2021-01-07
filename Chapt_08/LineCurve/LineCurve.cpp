@@ -479,8 +479,8 @@ void KMyCanvas::TestGeometricWidth(HDC hDC)
 		Line(hDC, p[2].x, p[2].y, 130, 250);
 		Label(hDC, 130, 250, "(x0+dx,y0-dy)");
 
-		Label(hDC, 20, 20, "dx = pen_width * sin(ø)/2");
-		Label(hDC, 20, 50, "dy = pen_width * cos(ø)/2");
+		Label(hDC, 20, 20, "dx = pen_width * sin(?/2");
+		Label(hDC, 20, 50, "dy = pen_width * cos(?/2");
 	
 	DeleteObject(hGreen);
 
@@ -1217,12 +1217,12 @@ void KMyCanvas::TestPath(HDC hDC)
 	// Use WidenPath and Stroke path to show geometric line construction
 	for (int i=0; i<3; i++)
 	{
-		const WideStyle[] = { PS_ENDCAP_SQUARE | PS_JOIN_MITER,
+		const LONG WideStyle[] = { PS_ENDCAP_SQUARE | PS_JOIN_MITER,
 							  PS_ENDCAP_ROUND  | PS_JOIN_ROUND,
 							  PS_ENDCAP_FLAT   | PS_JOIN_BEVEL
 							};
-		const ThinStyle[] = { PS_ALTERNATE, PS_DOT, PS_SOLID };
-		const Color    [] = { RGB(0xFF, 0, 0), RGB(0, 0, 0xFF), RGB(0,0,0) };
+		const LONG ThinStyle[] = { PS_ALTERNATE, PS_DOT, PS_SOLID };
+		const LONG Color    [] = { RGB(0xFF, 0, 0), RGB(0, 0, 0xFF), RGB(0,0,0) };
 
 
 		{
